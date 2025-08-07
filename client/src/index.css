@@ -1,0 +1,44 @@
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* client/src/App.css */
+body {
+  background-color: #0f0f0f;
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.app {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #8e44ad;
+  text-shadow: 0 0 10px #8e44ad;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #bbbbbb;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  background-color: #8e44ad;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #8e44ad;
+  transition: all 0.3s ease;
+}
