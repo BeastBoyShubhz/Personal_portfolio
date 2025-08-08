@@ -1,36 +1,53 @@
-// client/src/App.js
-import React from 'react';
-import { motion } from 'framer-motion';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-function App() {
+import Resume from "./components/Resume";
+// Assume you have Home component in App.js or create a simple placeholder
+
+function Home() {
   return (
-    <div className="app">
-      <motion.h1
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        👋 Hi, I'm Shubham Singla
-      </motion.h1>
-
+    <div style={{ padding: "2rem", textAlign: "center" }}>
+      <h1>Welcome to My Portfolio</h1>
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 1 }}
+        transition={{ duration: 1 }}
+        style={{ fontSize: "1.25rem" }}
       >
-        Cybersecurity Analyst | Developer | Tech Explorer
+        Explore my Resume and Projects
       </motion.p>
-
-      <motion.a
-        href="#projects"
-        className="btn"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        View My Work
-      </motion.a>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <nav
+        style={{
+          display: "flex",
+          gap: "1rem",
+          padding: "1rem 2rem",
+          background: "#0077cc",
+          color: "white",
+          fontWeight: "bold",
+          justifyContent: "center",
+          fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+        }}
+      >
+        <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+          Home
+        </Link>
+        <Link to="/resume" style={{ color: "white", textDecoration: "none" }}>
+          Resume
+        </Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/resume" element={<Resume />} />
+      </Routes>
+    </Router>
   );
 }
 
